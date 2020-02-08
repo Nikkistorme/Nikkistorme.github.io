@@ -1,0 +1,47 @@
+
+.lb-data .lb-caption {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5em;
+}
+
+.lb-data .lb-details {
+  width: 90%;
+  text-align: center;
+  margin-top: 30px;
+  margin-left: 5%;
+  @include mq("med") {
+    width: 100%;
+    margin-left: 0px;
+  }
+}
+
+.lb-nav a.lb-prev {
+  display: block !important;
+  opacity: 1;
+  @include mq("lg") {
+    margin-left: -150px;
+  }
+}
+
+.lb-nav a.lb-next {
+  display: block !important;
+  opacity: 1;
+  @include mq("lg") {
+    margin-right: -150px;
+  }
+}
+
+.lb-data .lb-close {
+  float: none;
+  width: 100%;
+  @include mq("lg") {
+    width: 128%;
+  }
+}
+
+.lb-dataContainer {
+  @include mq("lg") {
+    width: 600px !important;
+  }
+}

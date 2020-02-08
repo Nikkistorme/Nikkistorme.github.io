@@ -1,0 +1,17 @@
+
+.search-bar {
+  border: solid lighten(lightgrey, 9%);
+  width: 90%;
+  max-width: 430px;
+  border-radius: 10px;
+  height: 20px;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  transition: border-color .25s ease;
+  &:focus {
+    outline: 0;
+    transition: border-color .25s ease;
+    border-color: grey;
+  }
+}

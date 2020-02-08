@@ -1,0 +1,30 @@
+
+.gallery {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+}
+
+.photo-block {
+  margin: 5px;
+  width: 46%;
+  max-width: 200px;
+  & img {
+    width: 100%;
+    border-radius: 10%;
+    transition: transform .5s ease;
+    &:hover {
+      transition: transform .5s ease;
+      transform: rotate(20deg) scale(1.2,1.2);
+    }
+  }
+  @include mq("med") {
+    width: auto;
+    margin: 25px 25px;
+    & img {
+      width: auto;
+    }
+  }
+}

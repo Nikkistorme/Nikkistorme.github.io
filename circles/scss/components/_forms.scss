@@ -1,0 +1,34 @@
+
+.form {
+  margin-right: auto;
+  @include flexy($dir: column);
+  .headline--secondary {
+    margin-left: 50px;
+  }
+  &__label--hidden {
+    display: none;
+  }
+  &__input {
+    margin: 15px 50px 15px 50px;
+    width: 380px;
+    align-self: center;
+    font-size: .9em;
+    font-weight: bolder;
+    border: none;
+    border-bottom: solid $color-primary 5px;
+    padding: 10px;
+    &:focus {
+      outline: 0;
+    }
+    @include mq("lg") {
+      width: 70%;
+    }
+  }
+  .btn--default {
+    margin-top: 10px;
+    @include mq("lg") {
+      align-self: center;
+      width: 80%;
+    }
+  }
+}

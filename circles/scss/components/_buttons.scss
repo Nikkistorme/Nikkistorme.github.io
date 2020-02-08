@@ -1,0 +1,18 @@
+
+.btn {
+  &--default {
+    @include button($back_color: $color-secondary);
+  }
+  &--success {
+    @include button($back_color: $color-success);
+  }
+  &--error {
+    @include button($back_color: $color-error);
+  }
+  &--warning {
+    @include button($back_color: $color-warning);
+  }
+  &--info {
+    @include button($back_color: $color-info);
+  }
+}

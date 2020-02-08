@@ -1,0 +1,297 @@
+
+
+/***************
+UNIVERSAL STYLES
+***************/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+h1, .h1 {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+}
+
+h2, .h2 {
+  font-size: 1.1em;
+  font-weight: bolder;
+  color: #2D3945;
+}
+
+h3, .h3 {
+  font-size: .85em;
+  font-weight: lighter;
+  color: #2D3945;
+}
+
+header {
+  color: #FFFFFF;
+  background-color: #2D3945;
+}
+
+#form {
+  display: inline-block;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 0px;
+  max-width: 695px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  text-align: left;
+  width: 99%;
+  padding-left: 13px;
+  padding-top: 3em;
+  background-color: #B1E1DE;
+  border-radius: 10px;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+legend {
+  position: absolute;
+}
+
+.textField {
+  background-color: #EFF0F1;
+  border-style: none;
+  border-radius: 10px;
+  height: 2.75em;
+  width: 90vw;
+}
+
+.textField:focus {
+  transition: border 0.25s ease;
+  outline: 0;
+  border: 2px solid #2D3945;
+}
+
+::-webkit-input-placeholder {
+  color: lightgrey;
+  font-size: .75em;
+  font-style: italic;
+  text-align: right;
+  padding: 1.75em;
+}
+/**
+    TOP SECTION
+**/
+
+.signupTitle {
+  padding-top: 1.2em;
+  padding-bottom: .75em;
+}
+
+.signupDescript {
+  line-height: 1.5em;
+  margin: auto 5vw 2.5em 5vw;
+  color: #C2C3C3;
+}
+
+.barone {
+  width: 90vw;
+  max-width: 692px;
+  border-color: #2D3945;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  margin-bottom: 0;
+}
+
+.bartwo {
+  width: 90vw;
+  max-width: 692px;
+  border-color: #2D3945;
+  border-width: 1px;
+  margin-top: 4px;
+}
+
+
+/***************
+CONTACT INFORMATION
+***************/
+
+#contactInfo {
+  top: 14em;
+}
+
+.formField {
+  margin: 1em 0 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#fullName, #emailAddress, #phoneNumber, #streetAddress, #city, #state, #zip {
+  margin-top: .75em;
+  padding-left: 1.3em;
+  color: #2D3945;
+}
+
+#state {
+  width: 90vw;
+}
+
+#zip {
+  width: 46vw;
+  margin-top: 0;
+  margin-bottom: 1em;
+  max-width: 200px;
+}
+
+/***************
+NEWSLETTER
+***************/
+
+#newsletterInfo {
+  top: 58em;
+}
+
+.newsletterSection {
+  margin-left: .25em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  max-width: 694px;
+}
+
+.newsletterOption {
+  margin-top: 1em;
+}
+
+#topics {
+  margin-top: 1em;
+  height: 6em;
+  padding: 1em 1.3em 1em 1.3em;
+  color: #2D3945;
+  width: 88vw;
+}
+
+/***************
+BUTTON
+***************/
+
+#signup {
+  margin-top: 1em;
+  text-align: center;
+}
+
+#signup button {
+  width: 89vw;
+  height: 3.5em;
+  background-color: #4EBBB5;
+  border-style: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+/***************
+FOOTER
+***************/
+
+footer h3 {
+  color: #C2C3C3;
+  font-size: .75em;
+  font-style: italic;
+  margin: 2em auto 15em auto
+}
+
+/***************
+MEDIA QUERIES
+***************/
+
+@media (min-width: 482px) {
+  #newsletterInfo {
+    top: 57em;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .signupTitle {
+    margin-top: 2em;
+}
+
+  .signupDescript {
+    margin-bottom: 3em;
+  }
+
+  fieldset {
+    padding: 0;
+    padding-top: 2em;
+    padding-left: 1em;
+  }
+
+  #contactInfo {
+    padding-top: 2em;
+    padding-bottom: 1.5em;
+  }
+
+  .formField {
+    flex-direction: row;
+    align-items: center;
+    max-width: 695px;
+    margin-right: 0;
+  }
+
+  .contactLabel {
+    width: 180px;
+    font-size: 15px;
+  }
+
+  #fullName, #emailAddress, #phoneNumber, #streetAddress, #city {
+    max-width: 472px;
+  }
+
+  #state {
+    width: 472px;
+  }
+
+  #zip {
+    width: 156px;
+  }
+
+  .zipForm {
+    margin-top: 30px;
+  }
+
+  .zipLabel {
+    margin-bottom: 15px;
+  }
+
+  .bottomBar {
+    margin-top: 30px;
+  }
+
+  #newsletterInfo {
+    top: 51.6em;
+  }
+
+  .newsletterSection {
+    font-size: 18px;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  #topics {
+    width: 655px;
+  }
+
+  #signup button {
+    width: 690px;
+    margin-top: 10px;
+  }
+}

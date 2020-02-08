@@ -1,0 +1,19 @@
+
+.img {
+  &--logo {
+    margin: 45px 45px 30px 45px;
+    @include mq("lg") {
+      margin: 30px 45px 30px 20px;
+      float: left;
+    }
+  }
+  &--avatar {
+    margin: auto;
+  }
+  &--frame {
+    width: 410px;
+    border: 1px solid lightgrey;
+    padding: 15px;
+    margin: 10px;
+  }
+}
