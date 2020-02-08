@@ -1,0 +1,44 @@
+
+.alert-banner {
+  @include flexy($dir: row, $just: space-around, $ali: center);
+  background-color: $color-indigo;
+  color: $color-white;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 0 10px 0 10px;
+  @include mq("three") {
+    margin: 15px;
+  }
+  @include mq("four") {
+    justify-content: space-between;
+  }
+  p {
+    font-size: .7em;
+    width: 80%;
+    @include mq("two") {
+      font-size: .8em;
+    }
+    @include mq("three") {
+      font-size: 1em;
+    }
+    @include mq("four") {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  h3 {
+    margin: 0;
+    @include mq("four") {
+      margin: 0 10px 0 10px;
+    }
+  }
+  button {
+    @include mq("four") {
+      margin: 0 10px 0 10px;
+    }
+  }
+}
+
+.alert-box {
+  width: 100%;
+}

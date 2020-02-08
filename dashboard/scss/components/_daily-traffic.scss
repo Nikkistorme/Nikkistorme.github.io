@@ -1,0 +1,16 @@
+
+.daily-traffic {
+  @include widget();
+  @include mq("four") {
+    @include widget($wid: 50vw, $marg: 0, $pad: 15px 20px);
+    border-right: $border-light;
+  }
+  @include mq("five") {
+    width: 100%;
+    max-width: 550px;
+    justify-self: end;
+  }
+  canvas {
+    margin: 20px 0;
+  }
+}

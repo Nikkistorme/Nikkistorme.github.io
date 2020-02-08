@@ -1,0 +1,88 @@
+
+// SET UP GRID
+
+// main grid
+.main-container {
+  @include gridboi($col-temp: 1fr, $row-temp: 60px 1fr);
+  @include mq("five") {
+    @include gridboi($col-temp: 80px 1fr, $row-temp: 1fr);
+  }
+}
+
+// sub grid
+.sub-container {
+  @include gridboi($col-temp: 1fr, $row-temp: 70px repeat(9, auto), $just-item: center);
+  grid-template-areas:
+    "dashboard"
+    "alert-box"
+    "traffic"
+    "daily-traffic"
+    "mobile-users"
+    "social-stats"
+    "new-members"
+    "recent-activity"
+    "message-user"
+    "settings";
+  @include mq("four") {
+    @include gridboi($col-temp: 1fr 1fr, $row-temp: 70px repeat(6, auto), $just-item: start);
+    grid-template-areas:
+      "dashboard dashboard"
+      "alert-box alert-box"
+      "traffic traffic"
+      "daily-traffic mobile-users"
+      "social-stats social-stats"
+      "new-members recent-activity"
+      "message-user settings";
+  }
+  @include mq("five") {
+    justify-items: center;
+  }
+}
+
+// set up grid areas
+.dashboard {
+  grid-area: dashboard;
+}
+
+.alert-box {
+  grid-area: alert-box;
+}
+
+.traffic {
+  grid-area: traffic;
+}
+
+.daily-traffic {
+  grid-area: daily-traffic;
+}
+
+.mobile-users {
+  grid-area: mobile-users;
+}
+
+.social-stats {
+  grid-area: social-stats;
+}
+
+.new-members {
+  grid-area: new-members;
+}
+
+.recent-activity {
+  grid-area: recent-activity;
+}
+
+.message-user {
+  grid-area: message-user;
+}
+
+.settings {
+  grid-area: settings;
+}
+
+// allow responsiveness of charts
+.chart-container {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}

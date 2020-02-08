@@ -1,0 +1,33 @@
+
+.recent-activity {
+  @include widget();
+  @include mq("four") {
+    @include widget($wid: 50vw, $marg: 0, $pad: 15px 20px);
+  }
+  @include mq("five") {
+    width: 100%;
+    max-width: 550px;
+    justify-self: start;
+  }
+  .activities-list {
+    @include gridboi($col-temp: 1fr, $row-temp: repeat(4, 75px), $row-gap: 15px);
+    margin-top: 30px;
+    .activity {
+      @include memblock();
+      &-info {
+        @include flexy($dir: column, $just: center);
+        flex: 1;
+        height: 60px;
+        p {
+          margin: 0;
+        }
+        &-timestamp {
+          margin-top: auto;
+        }
+      }
+      &-four {
+        border: 0;
+      }
+    }
+  }
+}

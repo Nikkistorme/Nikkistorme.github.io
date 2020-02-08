@@ -1,0 +1,59 @@
+
+.new-members {
+  @include widget();
+  @include mq("four") {
+    @include widget($wid: 50vw, $marg: 0, $pad: 15px 20px);
+    border-right: $border-light;
+  }
+  @include mq("five") {
+    width: 100%;
+    max-width: 550px;
+    justify-self: end;
+  }
+  .members-list {
+    @include gridboi($col-temp: 1fr, $row-temp: repeat(4, 75px), $row-gap: 15px);
+    margin-top: 30px;
+    .member {
+      @include memblock();
+      &-info {
+        @include flexy($dir: column);
+        flex: 1;
+        @include mq("two") {
+          flex-direction: row;
+        }
+        @include mq("four") {
+          flex-direction: column;
+        }
+        @include mq("five") {
+          flex-direction: row;
+        }      
+        &-contact {
+          margin-top: 10px;
+          p {
+            font-size: 1.2em;
+          }
+          a {
+            color: #8080ff;
+            font-size: .8em;
+            @include mq("one") {
+              font-size: 1em;
+            }
+          }
+        }
+        &-date {
+          text-align: right;
+        }
+        p {
+          margin: 0;
+          @include mq("two") {
+            margin-left: auto;
+            align-self: center;
+          }
+        }
+      }
+    }
+    .member-four {
+      border-bottom: 0;
+    }
+  }
+}

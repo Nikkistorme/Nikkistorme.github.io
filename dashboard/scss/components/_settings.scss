@@ -1,0 +1,132 @@
+
+.settings {
+  @include flexy($dir: column);
+  @include widget($bord: none);
+  @include mq('three') {
+    width: 500px;
+    align-self: center;
+  }
+  @include mq('four') {
+    @include widget($wid: 50vw, $marg: 0, $pad: 15px 20px, $bord: none);
+    align-self: start;
+  }
+  @include mq('five') {
+    width: 100%;
+    max-width: 550px;
+    justify-self: start;
+  }
+  .settings-form {
+    @include gridboi($col-temp: 1fr, $row-temp: auto 40px 50px, $row-gap: 20px);
+    height: 272px;
+  }
+}
+
+.settings-toggles {
+  @include gridboi($col-temp: 180px 1fr 80px, $row-temp: repeat(2, 50px), $ali-item: center);
+  margin-left: 10px;
+  align-self: center;
+  @include mq('five') {
+    grid-template-columns: 180px 50px 80px;
+  }
+  .toggle-1,
+  .toggle-2 {
+    @include wh($w: 80px, $h: 30px);
+    .switch-label-1,
+    .switch-label-2 {
+      @include wh($w: 100%,$h: 100%);
+      cursor: pointer;
+      background: $color-off-white;
+      display: block;
+      border-radius: 100px;
+      border: 2px solid lightgrey;
+      position: relative;
+      &:after {
+        @include wh($w: 27%, $h: 75%);
+        content: '';
+        position: absolute;
+        top: 3%;
+        left: 2.5%;
+        background: $color-white;
+        border: 2px solid lightgrey;
+        border-radius: 90px;
+        transition: 0.3s;
+      }
+    }
+  }
+}
+
+.switch-1,
+.switch-2 {
+  display: none;
+}
+
+.toggle-on {
+  @include toggle();
+  margin: -24px 0 0 10px;
+  color: $color-white;
+}
+.toggle-off {
+  @include toggle();
+  margin: -24px 0 0 42px;
+  color: lightgrey;
+}
+
+// TOGGLE FUNCTIONALITY
+.switch-1 {
+  &:checked + .switch-label-1 {
+    background: $color-indigo;
+  }
+  &:checked + .switch-label-1:after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+  }
+  @include switchy();
+}
+
+.switch-2 {
+  &:checked + .switch-label-2 {
+    background: $color-indigo;
+  }
+  &:checked + .switch-label-2:after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+  }
+  @include switchy();
+}
+
+// timezone select
+.timezone-container {
+  @include wh($w: 100%, $h: 40px);
+  overflow: hidden;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  background: $color-off-white url(../images/icon-chevron.png) no-repeat scroll 96% center;
+  .timezone {
+    @include wh($w: 100%, $h: 100%);
+    border: $border-light;
+    border-radius: 7px;
+    background: transparent;
+    font-size: 16px;
+    color: grey;
+    padding: 2px 10px;
+    -webkit-appearance: none;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// settings buttons
+.settings-buttons {
+  @include gridboi($col-temp: 1fr 1fr, $row-temp: 1fr, $col-gap: 30px);
+  @include mq("four") {
+    align-self: end;
+  }
+  .settings-submit {
+    @include setbut($color-indigo);
+  }
+  .settings-cancel {
+    @include setbut(#B2B2B2);
+  }
+}

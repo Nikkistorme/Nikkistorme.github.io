@@ -1,0 +1,79 @@
+
+.social-stats {
+  @include gridboi($col-temp: 1fr, $row-temp: repeat(3, auto), $row-gap: 30px, $just-item: center);
+  @include widget();
+  padding-bottom: 30px;
+  @include mq("four") {
+    @include gridboi($col-temp: 1fr 1fr, $col-gap: 30px);
+    @include widget($wid: 100vw, $marg: 0, $pad: 30px);
+    grid-template-areas:
+    "social-title social-title"
+    "twitter facebook"
+    "google-plus google-plus";
+  }
+  @include mq("five") {
+    @include gridboi($col-temp: 1fr 1fr 1fr, $row-temp: auto auto);
+    grid-template-areas:
+    "social-title social-title social-title"
+    "twitter facebook google-plus";
+    width: 100%;
+    max-width: 1100px;
+  }
+  .social-box {
+    @include flexy($dir: row, $ali: center, $just: space-between);
+    padding: 20px;
+    background-color: $color-off-white;
+    border: $border-light;
+    max-width: 330px;
+    min-width: 277px;
+    @include mq("six") {
+      width: 330px;
+    }
+    &-descript {
+      @include flexy($dir: column, $ali: flex-start);
+      margin: auto auto auto 20px;
+      h3 {
+        color: $color-indigo;
+        font-size: 1.5em;
+        margin: 0;
+      }
+      p {
+        font-size: 3em;
+        margin: 0;
+      }
+    }
+  }
+  h3 {
+    justify-self: start;
+    @include mq("four") {
+      grid-area: social-title;
+    }
+  }
+  .twitter {
+    @include mq("four") {
+      grid-area: twitter;
+      justify-self: end;
+    }
+    @include mq("five") {
+      justify-self: center;
+    }
+  }
+  .facebook {
+    @include mq("four") {
+      grid-area: facebook;
+      justify-self: start;
+    }
+    @include mq("five") {
+      justify-self: center;
+    }
+  }
+  .google-plus {
+    @include mq("four") {
+      grid-area: google-plus;
+    }
+  }
+}
+
+.icon-social {
+  width: 75px;
+}

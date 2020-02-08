@@ -1,0 +1,60 @@
+
+.message-user {
+  @include widget();
+  @include mq("four") {
+    @include widget($wid: 50vw, $marg: 0, $pad: 15px 20px);
+    border: 0;
+    border-right: $border-light;
+  }
+  @include mq("five") {
+    width: 100%;
+    max-width: 550px;
+    justify-self: end;
+  }
+  .message {
+    @include gridboi($col-temp: 1fr, $row-temp: repeat(3, auto), $row-gap: 15px);
+    margin: 20px 0;
+    .message-input {
+      border-radius: 7px;
+      border: $border-light;
+      background: $color-off-white;
+      width: 100%;
+      padding: 15px;
+      &:focus {
+        outline: 0;
+      }
+    }
+    .message-submit {
+      @include wh($w: 100%, $h: 50px);
+      background: $color-indigo;
+      color: $color-white;
+      border: 0;
+      border-radius: 7px;
+      font-weight: bold;
+      font-size: 100%;
+      padding: 0;
+      outline: none;
+    }
+  }
+}
+
+.autocomplete {
+  position: relative;
+  #autocomplete-results {
+    display: none;
+    width: 100%;
+    margin-top: -2px;
+    background: $color-off-white;
+    padding: 0;
+    li {
+      width: 100%;
+      padding: 20px 15px;
+      border-bottom: $border-light;
+      border-right: $border-light;
+      border-left: $border-light;
+      &:hover {
+        background: darken($color-off-white, 15%);
+      }
+    }
+  }
+}

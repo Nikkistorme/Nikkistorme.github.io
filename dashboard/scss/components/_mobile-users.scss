@@ -1,0 +1,15 @@
+
+.mobile-users {
+  @include widget();
+  @include mq("four") {
+    @include widget($wid: 50vw, $marg: 0, $pad: 15px 20px);
+  }
+  @include mq("five") {
+    width: 100%;
+    max-width: 550px;
+    justify-self: start;
+  }
+  canvas {
+    margin: 20px 0;
+  }
+}

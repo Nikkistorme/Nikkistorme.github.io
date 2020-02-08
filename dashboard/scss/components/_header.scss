@@ -1,0 +1,81 @@
+
+.header {
+  @include flexy($dir: row, $just: space-between, $ali: center);
+  h1 {
+    padding-left: 5px;
+  }
+}
+
+// NOTIFICATIONS
+@keyframes wiggle {
+  0% {transform: rotate(10deg);}
+  25% {transform: rotate(-10deg);}
+  50% {transform: rotate(20deg);}
+  75% {transform: rotate(-10deg);}
+  100% {transform: rotate(0deg);}
+}
+
+.notifications {
+  width: 30px;
+  padding-top: 7px;
+  margin: auto 15px auto auto;
+  transition: transform .5s ease-out;
+  .bell-circle {
+    @include dot;
+    position: absolute;
+    margin-top: -37px;
+  }
+  &:hover {
+    animation: wiggle .5s 1;
+  }
+}
+
+#notifs-box {
+  @include gridboi($disp: none, $col-temp: 210px, $row-auto: 50px);
+  display: none;
+  position: absolute;
+  right: 95px;
+  top: 50px;
+  background-color: $color-off-white;
+  border: 2px $color-deep-purple solid;
+  border-radius: 5px;
+  z-index: 1;
+  @include mq("two") {
+    right: 235px;
+  }
+  .notif {
+    @include flexy($dir: row, $ali: center, $just: space-between);
+    padding: 0 10px;
+    border-bottom: $border-light;
+    .circle {
+      @include dot;
+      display: block;
+    }
+    p {
+      font-size: .7em;
+      border: none;
+    }
+  }
+}
+
+// CURRENT USER
+.current-user {
+  @include flexy($dir: row);
+  padding: 0 5px 0 15px;
+  border-left: 1px solid #6568BF;
+  img {
+    @include wh($w: 50px, $h: 50px);
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+  p {
+    display: none;
+    color: $color-white;
+    font-size: 1.1em;
+    margin: auto;
+    padding-left: 15px;
+    @include mq("two") {
+      display: inline-block;
+    }
+  }
+}
